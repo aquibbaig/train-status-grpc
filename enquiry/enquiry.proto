@@ -1,0 +1,23 @@
+syntax="proto3";
+
+package enquiry;
+
+message Message {
+  string trainNumber = 1;
+}
+
+message TrainSchedule {
+  string stationName = 1;
+  string arrival = 2;
+  string departure = 3;
+}
+
+message EnquiryResponse {
+  repeated TrainSchedule resp = 1;
+}
+
+// we will return an array
+// for each station the train covers.
+service TrainStatus {
+  rpc ReturnTrainDetails(Message) returns (EnquiryResponse) {}
+}

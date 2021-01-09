@@ -1,0 +1,5 @@
+package enquiry
+
+func enquire () {
+
+}
